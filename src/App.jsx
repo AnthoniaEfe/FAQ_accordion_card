@@ -44,10 +44,10 @@ function App() {
        { faqs.map((faq, index)=>(
         <div key={index} className="faq-card"> 
          <span className="question-section" onClick={()=>toggleAccordian(index)}> 
-          <h3 id={`faq-question-${index}`} className="question" 
+          <h2 id={`faq-question-${index}`} className="question" 
               aria-expanded={open === index} aria-controls={`faq-answer-${index}`}>
             {faq.question} 
-          </h3>
+          </h2>
           {/* this changed all the svg icons */}
           {/* {!open ? <img src={iconPlus} alt="plus icon" /> : <img src={iconMinus} alt="minus icon"/>}  */}
           {/* this fixes the abive issue  */}
