@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+$white: hsl(0, 0%, 100%);
+$light-pink: hsl(275, 100%, 97%);
+$grayish-purple: hsl(292, 16%, 49%);
+$dark-purple: hsl(292, 42%, 14%);
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-left {
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+}
+
+@mixin flex-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  color: $light-grey;
+  font-family: Work Sans,sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  background-color: $light-pink;
+
+}
+
+main {
+  @include flex-center;
+  flex-direction: column;
+  min-height: 100vh;
+  width:100%;
+  gap:2.5rem;
+}
+
+#card-container{
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: $white;
+  width:80%;
+}
