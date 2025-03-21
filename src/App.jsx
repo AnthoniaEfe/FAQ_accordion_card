@@ -36,11 +36,11 @@ function App() {
     <main>
       <div id="card-container">
       <header>   
-        <img src={iconStar} alt="star icon"/>
+        <img src={iconStar} alt="star icon"  aria-hidden="true"/>
         <h1> FAQs</h1>
       </header>
    
-      <section>
+      <section aria-label="Frequently Asked Questions">
        { faqs.map((faq, index)=>(
         <div key={index} className="faq-card"> 
          <span className="question-section" onClick={()=>toggleAccordian(index)}> 
@@ -51,12 +51,15 @@ function App() {
           {/* this changed all the svg icons */}
           {/* {!open ? <img src={iconPlus} alt="plus icon" /> : <img src={iconMinus} alt="minus icon"/>}  */}
           {/* this fixes the abive issue  */}
-          <img
-                    src={open === index ? iconMinus : iconPlus}
-                    alt={open === index ? "Collapse" : "Expand"}
-                  />
+          <img  src={open === index ? iconMinus : iconPlus} alt={open === index ? "Collapse" : "Expand"} aria-hidden="true"/>
           </span>
-         { open === index && (<p id={`faq-answer-${index}`} className="answer">{faq.answer}</p>)}
+         { open === index && (<div
+                id={`faq-answer-${index}`}
+                className="answer"
+                role="region"
+                aria-labelledby={`faq-question-${index}`}
+                hidden={open !== index}>
+                  <p id={`faq-answer-${index}`} className="answer">{faq.answer}</p></div>)}
          <hr></hr>
         </div>
        
